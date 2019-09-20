@@ -23,31 +23,31 @@ inputs:
   input_normal_snp: File
   input_interval_count: File
 outputs:
-  theta_n2_graph:
+  n2_graph:
     type: File
     outputBinding:
       glob: '*.n2.graph.pdf'
-  theta_n2_results:
+  n2_results:
     type: File
     outputBinding:
       glob: '*.n2.results'
-  theta_n2_withBounds:
+  n2_withBounds:
     type: File
     outputBinding:
       glob: '*.n2.withBounds'
-  theta_n3_graph:
+  n3_graph:
     type: File
     outputBinding:
       glob: '*.n3.graph.pdf'
-  theta_n3_results:
+  n3_results:
     type: File
     outputBinding:
       glob: '*.n3.results'
-  theta_n3_withBounds:
+  n3_withBounds:
     type: File
     outputBinding:
       glob: '*.n3.withBounds'
-  theta_best_results:
+  best_results:
     type: File
     outputBinding:
       glob: '*.BEST.results'
