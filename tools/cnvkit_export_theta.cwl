@@ -17,8 +17,8 @@ arguments:
     valueFrom: >- 
       -r $(inputs.input_reference_cnn.path)
       -v $(inputs.input_paired_vcf.path)
-      -i $(inputs.tumor_ID)
-      -n $(inputs.normal_ID)
+      -i $(inputs.input_tumor_ID)
+      -n $(inputs.input_normal_ID)
       $(inputs.input_tumor_cns.path)
 
 inputs:
