@@ -25,19 +25,19 @@ inputs:
   input_tumor_cns: File
   input_reference_cnn: File
   input_paired_vcf: File
-  normal_ID: string
-  tumor_ID: string
+  input_normal_ID: string
+  input_tumor_ID: string
 
 outputs:
   call_interval_count:
     type: File
     outputBinding:
       glob: '*.call.interval_count'
-  call_tumor_snp
+  call_tumor_snp:
     type: File
     outputBinding:
       glob: '*.call.tumor.snp_formatted.txt'
-  call_normal_snp
+  call_normal_snp:
     type: File
     outputBinding:
       glob: '*.call.normal.snp_formatted.txt'

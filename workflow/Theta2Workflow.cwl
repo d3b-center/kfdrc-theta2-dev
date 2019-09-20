@@ -30,6 +30,8 @@ steps:
       input_tumor_cns: tumor_cns
       input_reference_cnn: reference_cnn
       input_paired_vcf: paired_vcf
+      input_tumor_ID: tumor_ID
+      input_normal_ID: normal_ID
     out: [call_interval_count, call_tumor_snp, call_normal_snp]
 
   RunTHetA:
