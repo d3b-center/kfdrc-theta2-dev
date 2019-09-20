@@ -11,8 +11,8 @@ inputs:
   tumor_cns: { type: File, doc: "Tumor segmented log2 ratios file, .cns"}
   reference_cnn: { type: File, doc: "Copy number reference profile for sample, .cnn"}
   paired_vcf: { type: File, doc: "Tumor/normal paired vcf file"}
-  tumor_ID: { string, doc: "Tumor bs_id"}
-  normal_ID: { string, doc: "Normal bs_id"}
+  tumor_ID: {type: string, doc: "Tumor bs_id"}
+  normal_ID: {type: string, doc: "Normal bs_id"}
 
 outputs:
   theta_n2_graph: { type: File, outputSource: RunTHetA/n2_graph}

@@ -5,42 +5,42 @@ $namespaces:
 id: cnvkit_batch
 baseCommand: []
 inputs:
-  - id: annotation_file
+  annotation_file
     type: File
     doc: refFlat.txt file
-  - id: capture_regions
+  capture_regions
     type: File?
     doc: target regions for WES
-  - id: input_control
+  input_control
     type: File?
     doc: normal bam file
     secondaryFiles:
       - .bai
-  - id: input_sample
+  input_sample
     type: File
     doc: tumor bam file
     secondaryFiles:
       - .bai
-  - id: output_basename
+  output_basename
     type: string
-  - id: reference
+  reference
     type: File
     doc: fasta file
     secondaryFiles:
       - .fai
-  - id: wgs_mode
+  wgs_mode
     type: string?
     doc: 'for WGS mode, input Y. leave blank for hybrid mode'
 outputs:
-  - id: output_calls
+  output_calls
     type: File
     outputBinding:
       glob: '*.call.cns'
-  - id: output_cnr
+  output_cnr
     type: File
     outputBinding:
       glob: '*.cnr'
-  - id: output_reference
+  output_reference
     type: File?
     outputBinding:
       glob: '*_cnvkit_reference.cnn'
