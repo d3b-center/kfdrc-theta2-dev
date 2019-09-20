@@ -19,7 +19,7 @@ arguments:
       -v $(inputs.input_paired_vcf.path)
       -i $(inputs.tumor_ID)
       -n $(inputs.normal_ID)
-      > $(inputs.imput_tumor_cns.path)
+      $(inputs.input_tumor_cns.path)
 
 inputs:
   input_tumor_cns: File
