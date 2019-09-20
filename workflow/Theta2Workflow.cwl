@@ -1,6 +1,6 @@
 cwlVersion: v1.0
 class: Workflow
-id: cnvkit-THetA2-wf
+id: cnvkit-theta2-wf
 
 requirements:
   - class: ScatterFeatureRequirement

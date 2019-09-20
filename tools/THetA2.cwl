@@ -1,6 +1,6 @@
 cwlVersion: v1.0
 class: CommandLineTool
-id: THetA2
+id: theta2
 requirements:
   - class: ShellCommandRequirement
   - class: DockerRequirement
