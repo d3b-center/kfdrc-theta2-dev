@@ -10,18 +10,20 @@ requirements:
     ramMin: 32000
     coresMin: 8
 
-baseCommand: [RunTHetA]
+baseCommand: [/THetA/bin/RunTHetA]
 arguments:
   - position: 1
     shellQuote: false
     valueFrom: >-
       --TUMOR_FILE $(inputs.input_tumor_snp.path)
       --NORMAL_FILE $(inputs.input_normal_snp.path)
-      > $(inputs.input_interval_count.path)
+      --OUTPUT_PREFIX $(inputs.input_output_basename)
+      $(inputs.input_interval_count.path)
 inputs:
   input_tumor_snp: File
   input_normal_snp: File
   input_interval_count: File
+  input_output_basename: string
 outputs:
   n2_graph:
     type: File
