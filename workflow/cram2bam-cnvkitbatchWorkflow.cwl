@@ -43,7 +43,7 @@ steps:
       output_basename: output_basename
       wgs_mode: wgs_mode
       threads: threads
-      input_normal: samtools_normal_cram2bam/bam_file
+      input_control: samtools_normal_cram2bam/bam_file
       input_sample: samtools_sample_cram2bam/bam_file
     out: [output_calls, output_cnr, output_reference]
 
