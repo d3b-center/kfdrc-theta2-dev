@@ -9,7 +9,7 @@ requirements:
 
 inputs:
     input_sample: {type: File, secondaryFiles: [.crai]}
-    input_normal: {type: File, secondaryFiles: [.crai]}
+    input_control: {type: File, secondaryFiles: [.crai]}
     reference: {type: File, doc: "input reference fasta"}
     annotation_file: {type: File, doc: "refflat.txt file"}
     output_basename: string
@@ -31,7 +31,7 @@ steps:
   samtools_normal_cram2bam:
     run: ../tools/samtools_cram2bam.cwl
     in:
-      input_reads: input_normal
+      input_reads: input_control
       reference: reference
     out: [bam_file]
   

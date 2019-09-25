@@ -12,7 +12,8 @@ inputs:
   output_basename: {type: string}
   capture_regions: {type: ['null', File], doc: "target regions for WES"}
   annotation_file: {type: ['null', File], doc: "refFlat.txt file,  needed if cnv kit cnn not already built"}
-
+  threads: {type: ['null', int], default: 16}
+  
 outputs:
   output_calls:
     type: File
@@ -23,7 +24,7 @@ outputs:
     outputBinding:
       glob: '*.cnr'
   output_reference:
-    type: File?
+    type: File
     outputBinding:
       glob: '*_cnvkit_reference.cnn'
 arguments:
