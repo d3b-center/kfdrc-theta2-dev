@@ -19,12 +19,14 @@ arguments:
       --NORMAL_FILE $(inputs.input_normal_snp.path)
       --OUTPUT_PREFIX $(inputs.input_output_basename)
       --NUM_PROCESSES 8
+      --MIN_FRAC $(inputs.min_frac)
       $(inputs.input_interval_count.path)
 inputs:
   input_tumor_snp: File
   input_normal_snp: File
   input_interval_count: File
   input_output_basename: string
+  min_frac: {type: ['null', float], doc: "Minimum fraction of genome with copy umber alterations.  Default is 0.05", default: 0.05}
 outputs:
   n2_graph:
     type: File

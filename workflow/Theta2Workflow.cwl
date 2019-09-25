@@ -15,6 +15,7 @@ inputs:
   normal_ID: {type: string, doc: "Normal bs_id"}	
   output_basename: {type: string}
   include_expression: {type: ['null', string], doc: "In case vcf file needs to be filtered on pass, etc"}
+  min_frac: {type: ['null', float], doc: "Minimum fraction of genome with copy umber alterations.  Default is 0.05", default: 0.05}
 
 outputs:
   theta_n2_graph: { type: File, outputSource: RunTHetA/n2_graph}
@@ -53,6 +54,7 @@ steps:
       input_tumor_snp: cnvkit_export_theta/call_tumor_snp
       input_normal_snp: cnvkit_export_theta/call_normal_snp
       input_output_basename: output_basename
+      min_frac: min_frac
     out: [n2_graph, n2_results, n2_withBounds, n3_graph, n3_results, n3_withBounds, best_results]
 
 $namespaces:
