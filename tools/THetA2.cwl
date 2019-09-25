@@ -18,6 +18,7 @@ arguments:
       --TUMOR_FILE $(inputs.input_tumor_snp.path)
       --NORMAL_FILE $(inputs.input_normal_snp.path)
       --OUTPUT_PREFIX $(inputs.input_output_basename)
+      --NUM_PROCESSES 8
       $(inputs.input_interval_count.path)
 inputs:
   input_tumor_snp: File

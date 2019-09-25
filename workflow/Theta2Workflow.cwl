@@ -14,6 +14,7 @@ inputs:
   tumor_ID: {type: string, doc: "Tumor bs_id"}
   normal_ID: {type: string, doc: "Normal bs_id"}	
   output_basename: {type: string}
+  include_expression: {type: ['null', string], doc: "In case vcf file needs to be filtered on pass, etc"}
 
 outputs:
   theta_n2_graph: { type: File, outputSource: RunTHetA/n2_graph}
@@ -25,12 +26,22 @@ outputs:
   theta_best_results: {type: File, outputSource: RunTHetA/best_results}
 
 steps:
+
+  bcftools_filter_vcf:
+    run: ../tools/bcftools_filter.cwl
+    in:
+      input_vcf: paired_vcf
+      include_expression: include_expression
+      output_basename: output_basename
+    out:
+      [filtered_vcf]
+
   cnvkit_export_theta:
     run: ../tools/cnvkit_export_theta.cwl
     in:
       input_tumor_cns: tumor_cns
       input_reference_cnn: reference_cnn
-      input_paired_vcf: paired_vcf
+      input_paired_vcf: bcftools_filter_vcf/filtered_vcf
       input_tumor_ID: tumor_ID
       input_normal_ID: normal_ID
     out: [call_interval_count, call_tumor_snp, call_normal_snp]
